@@ -38,13 +38,13 @@
             if(time_distance>0.01)
             {
                 int_day=Math.floor(time_distance/8640000000)
-                time_distance-=int_day*86400000;
+                time_distance-=int_day*8640000000;
                 int_hour=Math.floor(time_distance/360000000)
-                time_distance-=int_hour*3600000;
+                time_distance-=int_hour*360000000;
                 int_minute=Math.floor(time_distance/6000000)
-                time_distance-=int_minute*60000;
+                time_distance-=int_minute*6000000;
                 int_second=Math.floor(time_distance/100000)
-                time_distance-=int_second*1000
+                time_distance-=int_second*100000
                 int_millisecond=Math.floor(time_distance/1000)
  
                 if(int_hour < 10)
