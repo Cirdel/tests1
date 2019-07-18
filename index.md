@@ -45,7 +45,7 @@
                 time_distance-=int_minute*60000;
                 int_second=Math.floor(time_distance/1000)
                 time_distance-=int_second*1000
-                int_millisecond=Math.floor(time_distance/1)
+                int_millisecond=Math.floor(time_distance*10)
  
                 if(int_hour < 10)
                     int_hour="0"+int_hour;
