@@ -1,37 +1,75 @@
-## Welcome to GitHub Pages
+# <center>高考倒计时</center>
+## There is ONLY
+<center>
+<html>
+<head>
+    <style type="text/css">
+        div{
+            font-size:20px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>JS时间倒计时</title>
+    <script type="text/javascript">
+        var time_now_server,time_now_client,time_end,time_server_client;
+ 
+        time_end=new Date("2022/06/18 00:00:0");//结束的时间
+        time_end=time_end.getTime();//获取的是毫秒
+ 
+        time_now_server=new Date();//开始的时间
+        time_now_server=time_now_server.getTime();
+        setTimeout("show_time()",1000);
+ 
+        function show_time()
+        {
+            var timer = document.getElementById("timer");
+            var hourid = document.getElementById("hour");
+            if(!timer){
+                return ;
+            }
+            timer.innerHTML =time_now_server;
+ 
+            var time_now,time_distance,str_time;
+            var int_day,int_hour,int_minute,int_second,int_millisecond;
+            var time_now=new Date();
+            time_now=time_now.getTime();
+            time_distance=time_end-time_now;
+            if(time_distance>0)
+            {
+                int_day=Math.floor(time_distance/86400000)
+                time_distance-=int_day*86400000;
+                int_hour=Math.floor(time_distance/3600000)
+                time_distance-=int_hour*3600000;
+                int_minute=Math.floor(time_distance/60000)
+                time_distance-=int_minute*60000;
+                int_second=Math.floor(time_distance/1000)
+                time_distance-=int_second*1000
+                int_millisecond=Math.floor(time_distance/10)
+ 
+                if(int_hour < 10)
+                    int_hour="0"+int_hour;
+                if(int_minute<10)
+                    int_minute="0"+int_minute;
+                if(int_second<10)
+                    int_second="0"+int_second;
+                if(int_millisecond<100)
+                    int_millisecond="0"+int_millisecond
+                str_time=int_day+" d "+int_hour+" h "+int_minute+" min "+int_second+" s "+int_millisecond+" ms left";
+                timer.innerHTML=str_time;
+                setTimeout("show_time()",1000);
+            }
+            else
+            {
+                timer.innerHTML =0;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="timer"></div>
+</body>
+</html>
+</center>
+### <center> Before The University/College entrance examination.</center>
 
-You can use the [editor on GitHub](https://github.com/Cirdel/tests1/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Cirdel/tests1/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
